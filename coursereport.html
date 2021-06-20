@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <title>课程报告</title>
+    </head>
+    <body>
+        <h1 class="center">《Web应用基础》课程结业报告</h1>
+        <h2>一、实验内容：</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;使用前端框架Angular完成应用网站-英雄之旅的开发，该网站能够对英雄数据进行增删改查,并能在不同的英雄数据视图之间导航，且具有一定的样式。</p>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;具体内容：</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.页面有能展示几个最强大英雄的区域。点击英雄即可查看该英雄的详细信息。同时该区域顶部有两个链接，可以在展示界面和全部英雄列表之间导航。
+            <br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.点击英雄列表，即可显示当前所有的英雄，并可新增英雄，点击英雄即可查看该英雄的详细信息，或者修改该英雄的基本信息，点击保存即可保存该英雄信息，并生成该英雄id号。
+            <br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.在英雄列表中，每个英雄按钮右下角有删除标志，点击即可删除该英雄信息。
+            <br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.网页下方有操作信息栏，模拟了远程数据服务器通讯，可记录每个操作。
+
+        </p>
+        <h2>二、开发过程：</h2>
+        <h3>1.创建英雄编辑器</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先使用命令创建名字为heroes的新组件，创建Hero类，为其添加属性，并在英雄列表组件中导入英雄属性。
+            添加文本输入框以方便用户输入。在表单元素和组件之间建立双向的数据绑定方便查看英雄属性以及修改的属性。
+        </p>
+        <h3>2.创建英雄显示列表</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为方便直观地了解英雄，需要创建能够显示所有英雄的列表，可以假设英雄数据都是从服务器处获取的，因此创建模拟英雄
+            数据文件，其中包含一些英雄数据，将该数据绑定给hero属性。为该列表添加一些样式来使其更美观。
+            <br>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;添加事件绑定，当用户点击一个英雄时，即可显示出该英雄基本信息。
+        </p>
+        <h3>3.添加服务</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;添加一些列服务来方便数据的展示，方便后续显示操作信息
+        </p>
+        <h3>4.添加导航</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用路由来添加导航支持，使得无论在哪个视图中点击一个英雄，都会导航到该英雄的详情页。
+        </p>
+        <h3>5.从服务器获取数据</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;启用HTTP服务，并通过该服务来模拟与远程服务器通讯的机制
+        </p>
+        <h2>三、遇到的问题</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.在网页中插入背景图片时图片要么被裁剪填充，要么无法充满整个网页。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.在使用ng serve 命令时报错：Cannot find module ‘@angular-devkit/build-angular/package.json</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.初次使用双向绑定时报错Template parse errors:
+            Can't bind to 'ngModel' since it isn't a known property of 'input'.</p>
+        <h2>四、问题解决</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.在css中使用background-repeat: no-repeat;
+            background-size: cover，前者可使图片不会被裁剪填充空区域，后者使得图片填充至整个页面。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.使用命令npm install 安装修复包即可。</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.导入FormsModule模块到AppModule</p>
+
+        <h2>五、总结</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将其他组件添加到壳组件Appcomponent中方可显示出来</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用ngModel实现双向数据绑定。
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把组件声明到 AppModule 很重要，CLI 会自动声明它。
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学会了如何创建一个独立可复用的组件
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学会了添加路由器以在不同组件之间导航
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学会了如何添加使用HTTP的必备依赖
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学会了配置内存web API 来加载数据
+        </p>
+    </body>
+</html>
